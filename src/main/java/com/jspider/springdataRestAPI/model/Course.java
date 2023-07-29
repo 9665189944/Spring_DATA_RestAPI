@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,5 +26,7 @@ public class Course {
     private  String subject;
     @Column(name="total_student")
     private  int totalStudent;
+
+
 
 }

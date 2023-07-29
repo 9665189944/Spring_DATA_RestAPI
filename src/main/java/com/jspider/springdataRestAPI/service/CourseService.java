@@ -37,4 +37,20 @@ public class CourseService {
         repository.deleteById(id);
     }
 
+    public Course findByBatchCod(String batchCode){
+        return repository.findByBatchCode(batchCode);
+    }
+    public List<Course> findBySubject(String subject){
+        return repository.findBySubject(subject);
+    }
+    public Course findByBatchCodAndSubject(String batchCode, String subject){
+        return repository.findByBatchCodeAndSubject(batchCode,subject);
+    }
+    public List<Course> findByTotalStudentBetween(int start, int end){
+        return repository.findByTotalStudentBetween(start, end);
+    }
+    public List<Course> findByBatchCodeOrSubject(String batchCode, String subject){
+        return repository.findByBatchCodeOrSubject(batchCode, subject);
+    }
+
 }
