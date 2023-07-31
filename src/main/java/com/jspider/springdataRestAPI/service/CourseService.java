@@ -3,6 +3,7 @@ package com.jspider.springdataRestAPI.service;
 import com.jspider.springdataRestAPI.model.Course;
 import com.jspider.springdataRestAPI.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -53,4 +54,25 @@ public class CourseService {
         return repository.findByBatchCodeOrSubject(batchCode, subject);
     }
 
+    //JPQl :- JAVA Persistence Query Language
+
+   public List<Course> findCourse()
+   {
+       return repository.findCourse();
+   }
+
+   public  List<Course> displayCourseBySubject(String subject)
+   {
+       return  repository.displayCourse(subject);
+   }
+
+   public List<Course> displayCourseContainsA()
+   {
+       return repository.displayCourseContainsA();
+   }
+
+    public List<Course> displayCourseBybatchcode(String Char)
+    {
+        return repository.displayCourseBybatchcode(Char);
+    }
 }

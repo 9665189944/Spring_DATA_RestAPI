@@ -62,4 +62,31 @@ public class CourseController {
     List<Course> findByBatchCodeOrSubject(@RequestParam(name = "code") String batchCode, @RequestParam(name = "sub") String subject) {
         return service.findByBatchCodeOrSubject(batchCode, subject);
     }
+
+    @GetMapping("/coursebyquery")
+    List<Course> findCourse()
+    {
+        return service.findCourse();
+    }
+
+    @GetMapping("/coursebyquery/{subject}")
+    List<Course> displayCourseBySubject(@PathVariable String subject)
+    {
+         return service.displayCourseBySubject(subject);
+    }
+
+    @GetMapping("/coursebyqueryContaintA")
+    List<Course> displayCourseContainsA()
+    {
+        return service.displayCourseContainsA();
+    }
+
+    //batchCode Contains specified character ( value from end user)
+    @GetMapping("/coursebyquery11/{Char}")
+    List<Course> displayCourseBybatchcodeaa(@PathVariable String Char)
+    {
+        return service.displayCourseBybatchcode(Char);
+    }
+
+
 }
